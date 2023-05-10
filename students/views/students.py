@@ -8,10 +8,10 @@ from rest_framework.filters import OrderingFilter, SearchFilter
 
 from common.views.mixins import LCRUDViewSet
 from students.backends import MySections
-from students.filters import  StudentFilter
+from students.filters import StudentFilter
 from students.models import students
-from students.permissions import IsTutor, IsDirectorOrSuperuser, \
-    IsStudentCreator
+from students.permissions import (IsDirectorOrSuperuser, IsStudentCreator,
+                                  IsTutor)
 from students.serializers.api import students as students_s
 
 

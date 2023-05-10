@@ -5,7 +5,7 @@ from rest_framework import serializers
 from rest_framework.exceptions import ParseError
 
 from common.serializers.mixins import (ExtendedModelSerializer,
-                                       InfoModelSerializer,)
+                                       InfoModelSerializer)
 from students.models.students import Student
 
 User = get_user_model()

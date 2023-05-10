@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from students.views import sections, dicts, members, students
+from students.views import dicts, members, sections, students
 
 router = DefaultRouter()
 

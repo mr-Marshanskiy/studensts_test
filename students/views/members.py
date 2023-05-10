@@ -4,8 +4,8 @@ from rest_framework.decorators import action
 from common.views.mixins import LCDViewSet
 from students.backends import SectionMember
 from students.models.sections import Member
-from students.serializers.api import members as members_s
 from students.permissions import IsTutor
+from students.serializers.api import members as members_s
 
 
 @extend_schema_view(

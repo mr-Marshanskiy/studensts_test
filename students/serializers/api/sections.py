@@ -4,8 +4,9 @@ from django.db import transaction
 from rest_framework import serializers
 from rest_framework.exceptions import ParseError
 
-from common.serializers.mixins import (ExtendedModelSerializer,
-                                       InfoModelSerializer, DictMixinSerializer)
+from common.serializers.mixins import (DictMixinSerializer,
+                                       ExtendedModelSerializer,
+                                       InfoModelSerializer)
 from students.models.sections import Section
 from students.serializers.nested.sections import SectionMemberShortSerializer
 from users.serializers.nested.users import UserShortSerializer

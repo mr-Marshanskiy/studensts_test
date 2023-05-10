@@ -5,7 +5,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from common.models.mixins import InfoMixin
 
-
 User = get_user_model()
 
 

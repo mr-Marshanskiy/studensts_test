@@ -7,7 +7,7 @@ from common.views.mixins import LCRUDViewSet
 from students.backends import MySections
 from students.filters import SectionFilter
 from students.models import sections
-from students.permissions import IsTutor, IsDirectorOrSuperuser
+from students.permissions import IsDirectorOrSuperuser, IsTutor
 from students.serializers.api import sections as sections_s
 
 
