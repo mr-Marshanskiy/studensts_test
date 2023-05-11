@@ -5,6 +5,7 @@ from django.db.models.functions import ExtractYear
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework.filters import OrderingFilter, SearchFilter
+from rest_framework.permissions import IsAuthenticated
 
 from common.views.mixins import LCRUDViewSet
 from students.backends import MySections
@@ -27,8 +28,8 @@ class StudentView(LCRUDViewSet):
     serializer_class = students_s.StudentListSerializer
 
     multi_permission_classes = {
-        'list': [IsTutor | IsDirectorOrSuperuser],
-        'retrieve': [IsTutor | IsDirectorOrSuperuser],
+        'list': [IsAuthenticated],
+        'retrieve': [IsAuthenticated],
         'create': [IsStudentCreator],
         'partial_update': [IsStudentCreator],
         'destroy': [IsStudentCreator],
