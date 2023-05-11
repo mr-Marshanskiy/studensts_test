@@ -5,6 +5,14 @@ from django.utils import timezone
 User = get_user_model()
 
 
+class LowercaseEmailField(models.EmailField):
+    def pre_save(self, model_instance, add):
+        email = getattr(model_instance, self.attname)
+        if email:
+            setattr(model_instance, self.attname, email.lower())
+        return super().pre_save(model_instance, add)
+
+
 class BaseDictModelMixin(models.Model):
     code = models.CharField('Code', max_length=16, primary_key=True)
     name = models.CharField('Name', max_length=32,)

@@ -1,7 +1,7 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
-from common.models.mixins import InfoMixin
+from common.models.mixins import InfoMixin, LowercaseEmailField
 
 
 class Student(InfoMixin):
@@ -11,7 +11,7 @@ class Student(InfoMixin):
         'Middle name', max_length=63, null=True, blank=True
     )
     dob = models.DateField('Birthday', null=True, blank=True)
-    email = models.EmailField('Email', null=True, blank=True)
+    email = LowercaseEmailField('Email', null=True, blank=True)
     phone = PhoneNumberField('Phone Number', null=True, blank=True)
     whatsapp_available = models.BooleanField(
         'Whatsaspp available', default=False
